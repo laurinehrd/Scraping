@@ -25,8 +25,6 @@
 
 <?php
 $content = ob_get_clean();
-?>
-<h1>coucou</h1>
-<?php
+
 require "view/template-home.php";
 
