@@ -1,0 +1,33 @@
+@import "../utils/variables";
+
+.section-home {
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        
+        .accessAccount {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            h2 {
+                padding-bottom: 8rem;
+            }
+            button {
+                margin: 1.5rem;
+            }
+            form {
+                width: 70%;
+                margin: auto;
+                button {
+                    &:hover {
+                        background-color: $primary;
+                        border-color: $primary;
+                        color: $light;
+                    }
+                }
+            }
+        }
+    }
+    
+}

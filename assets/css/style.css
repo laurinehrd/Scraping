@@ -31,7 +31,8 @@ h2 {
   padding-right: 2.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-family: 'gilroyextrabold', sans-serif; }
+  font-family: 'gilroyextrabold', sans-serif;
+  border-radius: 7px; }
 
 .btn-primary {
   background-color: #0D84DA;
@@ -48,6 +49,14 @@ h2 {
     color: #0D84DA;
     border-color: #0D84DA;
     background-color: #F7F8FA; }
+
+form .form-floating input {
+  background-color: #F7F8FA;
+  border-color: #3A405F;
+  border-radius: 7px; }
+
+.form-control:focus {
+  background-color: #F7F8FA; }
 
 .section-home {
   height: 100vh;
@@ -81,5 +90,27 @@ h2 {
     .section-home .image img {
       width: 100%;
       height: 100%; }
+
+.section-home .content {
+  display: flex;
+  flex-direction: column; }
+  .section-home .content .accessAccount {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto; }
+    .section-home .content .accessAccount h2 {
+      padding-bottom: 8rem; }
+    .section-home .content .accessAccount button {
+      margin: 1.5rem; }
+    .section-home .content .accessAccount form {
+      width: 70%;
+      margin: auto; }
+      .section-home .content .accessAccount form button:hover {
+        background-color: #0D84DA;
+        border-color: #0D84DA;
+        color: #F7F8FA; }
+
+.section-home .content .accessAccount h2 {
+  padding-bottom: 4rem; }
 
 /*# sourceMappingURL=style.css.map */
