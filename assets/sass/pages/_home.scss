@@ -1,0 +1,47 @@
+@import "../utils/variables";
+
+.section-home {
+    height: 100vh;
+    display: flex;
+    .content {
+        // width: 50%;
+        display: flex;
+        flex-direction: column;
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            img {
+                width: 4em;
+            }
+            h1 {
+                padding-left: 1rem;
+                margin-bottom: 0;
+            }
+        }
+        
+        .accessAccount {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            h2 {
+                padding-bottom: 8rem;
+            }
+            button {
+                margin: 1.5rem;
+            }
+        }
+    }
+    .image {
+        // width: 50%;
+        background-image: url('../images/scrap.png');
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
