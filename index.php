@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <title>Scrap</title>
 
-  <link href="public/css/style.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/css/style.css">
+  
 </head>
 
 <body>

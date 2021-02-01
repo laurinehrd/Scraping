@@ -1,3 +1,16 @@
-body {
-    color: red;
-}
+//UTILS
+@import "./utils/variables";
+
+//BASE
+@import "./base/typo";
+@import "./base/base";
+
+//COMPOSANTS
+@import "./composants/header";
+
+//PAGES
+
+
+
+//LAYOUT
+@import "./layout/media-queries";
