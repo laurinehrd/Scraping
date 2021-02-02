@@ -11,8 +11,15 @@
         </div>
         <div class="accessAccount">
             <h2>Accéder au compte</h2>
-            <button type="button" class="btn btn-primary">Se connecter</button>
-            <button type="button" class="btn btn-outline-primary">S'inscrire</button>
+            <a href="?action=signIn" class="button">Se connecter</a>
+            <!-- <form action="?action=signIn">
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+            <form action="?action=signOn">
+                <button type="submit" class="btn btn-outline-primary">S'inscrire</button>
+            </form> -->
+
+            
         </div>
         
     </div>
