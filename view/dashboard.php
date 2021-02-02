@@ -29,7 +29,7 @@
 </div>
 <!-- fin header -->
 
-<h2>Que voulez-vous faire ?</h2>
+<h2 class="h2-dashboard">Que voulez-vous faire ?</h2>
 
 <div class="menu">
     <a href="?action=newScrap">

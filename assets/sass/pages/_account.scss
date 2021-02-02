@@ -1,0 +1,31 @@
+@import "../utils/variables";
+
+.form-account {
+    width: 40%;
+    margin: auto;
+    form {
+        div {
+            input {
+                background-color: $light;
+                border-color: $secondary;
+                border-radius: 7px;
+            }
+        }
+        .input-group {
+            button {
+                background-color: $secondary;
+                border-color: $secondary;
+                font-family: 'gilroylight', sans-serif;
+                padding: {
+                    top: 0.5rem;
+                    bottom: 0.5rem;
+                }
+            }
+        }
+    }
+    .button-update-delete {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}

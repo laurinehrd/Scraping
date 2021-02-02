@@ -45,6 +45,11 @@ h2 {
     }
 }
 
+.btn-danger {
+    background-color: #E57676;
+    border-color: #E57676;
+}
+
 .btn-outline-primary {
     color: $primary;
     border-color: $primary;
@@ -66,12 +71,32 @@ form {
         }
     }
 }
+
 .form-control:focus {
     background-color: $light;
+}
+
+.form-scrap {
+    form {
+        div {
+            input, select {
+                background-color: $light;
+                border-color: $secondary;
+                border-radius: 7px;
+            }
+        }
+    }
 }
 
 // LIEN
 a {
     text-decoration: none;
     color: $secondary;
+}
+
+// DISPO TITRE
+.h2-titlePage {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }

@@ -41,6 +41,10 @@ h2 {
     background-color: #0D84DA;
     border-color: #0D84DA; }
 
+.btn-danger {
+  background-color: #E57676;
+  border-color: #E57676; }
+
 .btn-outline-primary {
   color: #0D84DA;
   border-color: #0D84DA;
@@ -58,9 +62,19 @@ form .form-floating input {
 .form-control:focus {
   background-color: #F7F8FA; }
 
+.form-scrap form div input, .form-scrap form div select {
+  background-color: #F7F8FA;
+  border-color: #3A405F;
+  border-radius: 7px; }
+
 a {
   text-decoration: none;
   color: #3A405F; }
+
+.h2-titlePage {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
 
 .navbar {
   background-color: #E2F0FB;
@@ -152,7 +166,7 @@ a {
 .section-home .content .accessAccount h2 {
   padding-bottom: 4rem; }
 
-h2 {
+.h2-dashboard {
   text-align: center;
   margin-top: 6rem; }
 
@@ -178,5 +192,30 @@ h2 {
     .menu .card:hover {
       background-color: #0D84DA;
       color: #F7F8FA; }
+
+.form-scrap {
+  width: 40%;
+  margin: auto; }
+  .form-scrap button {
+    margin-top: 3rem;
+    text-align: center; }
+
+.form-account {
+  width: 40%;
+  margin: auto; }
+  .form-account form div input {
+    background-color: #F7F8FA;
+    border-color: #3A405F;
+    border-radius: 7px; }
+  .form-account form .input-group button {
+    background-color: #3A405F;
+    border-color: #3A405F;
+    font-family: 'gilroylight', sans-serif;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .form-account .button-update-delete {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between; }
 
 /*# sourceMappingURL=style.css.map */
