@@ -1,0 +1,33 @@
+@import "../utils/variables";
+
+h2 {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.menu {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-evenly;
+    .card {
+        width: 18rem;
+        height: 18rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $light;
+        border-color: $light;
+        filter: drop-shadow(4px 4px 16px rgba(58, 64, 95, 0.15));
+        border-radius: 7px;
+        h3 {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem;
+        }
+        &:hover {
+            background-color: $primary;
+            color: $light;
+        }
+    }
+}

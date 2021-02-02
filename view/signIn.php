@@ -6,8 +6,10 @@
     <div class="content col-md-6">
 
         <div class="logo mx-auto">
-            <img src="assets/images/logoScrap.png" alt="logo Scrap">
-            <h1>Scrap</h1>
+            <a href="?action=home">
+                <img src="assets/images/logoScrap.png" alt="logo Scrap">
+                <h1>Scrap</h1>
+            </a>
         </div>
         <div class="accessAccount">
             <h2>Se connecter</h2>
