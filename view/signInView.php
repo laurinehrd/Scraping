@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 
 <!-- page se connecter -->
 <div class="section-home">
@@ -35,8 +34,3 @@
 
 </div>
 <!-- fin page se connecter -->
-
-<?php
-$content = ob_get_clean();
-
-require "view/template-home.php";

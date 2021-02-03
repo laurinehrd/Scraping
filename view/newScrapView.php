@@ -36,7 +36,7 @@
     <form class="row g-3">
         <div class="col-12">
             <label for="inputName" class="form-label">Nom de l'extraction</label>
-            <input type="text" class="form-control" id="inputName">
+            <input type="text" class="form-control" id="inputName" placeholder="Soldes Amazon">
         </div>
         <div class="col-12">
             <label for="inputUrl" class="form-label">URL du site</label>

@@ -32,8 +32,8 @@
 <h2 class="h2-titlePage">Mon compte</h2>
 
 <div class="form-account">
-    <div class="text-center mb-5">
-        <img src="assets/images/user.png" alt="icon user">
+    <div class="text-center mb-4">
+        <img src="assets/images/user-big.png" alt="icon user">
     </div>
 
     <form action="" method="post">

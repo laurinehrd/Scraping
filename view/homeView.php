@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 
 <!-- page home -->
 <div class="section-home">
@@ -28,8 +27,4 @@
 <!-- fin page home -->
 
 
-<?php
-$content = ob_get_clean();
-
-require "view/template-home.php";
 
