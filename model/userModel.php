@@ -30,10 +30,15 @@ class UserModel
         // $sth->execute();
         // return $sth->fetchAll(PDO::FETCH_ASSOC);
 
-        $request = $this->db->prepare('SELECT email, password FROM user WHERE email = ?, password = ?');
-        $request->bindParam(1, $email);
-        $request->bindParam(2, $password);
-        $request->execute();
+        $request = $this->db->prepare("SELECT email, password FROM user WHERE email = '.$email.' AND password = '.$password.'");
+        // $request->bindParam(1, $email);
+        // $request->bindParam(2, $password);
+        
+        $result = $request->execute();
+        return $result;
+        var_dump($result);
+        
+        
     }
 
     public function signOn($name, $firstname, $email, $password)

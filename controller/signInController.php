@@ -12,13 +12,14 @@ class SignInController
         {
             $user = new UserModel();
             $result = $user->signIn($_POST['email'], $_POST['password']);
+            var_dump($result);
 
             if(count($result) === 0)
             {
                 $error = true;
             }
             else {
-                header('Location: ?action=dashboard');
+                // header('Location: ?action=dashboard');
                 exit();
             }
         }
