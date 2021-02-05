@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 
 <!-- page dashboard -->
 
@@ -54,8 +53,3 @@
 
 
 <!-- fin page dashboard -->
-
-<?php
-$content = ob_get_clean();
-
-require "view/template-home.php";

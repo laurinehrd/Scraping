@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 
 <!-- header -->
 <div class="navbar">
@@ -70,9 +69,3 @@
 </div>
 <!-- fin page nouvelle extraction -->
 
-
-
-<?php
-$content = ob_get_clean();
-
-require "view/template-home.php";

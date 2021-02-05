@@ -13,18 +13,29 @@
         <div class="accessAccount">
             <h2>Se connecter</h2>
 
-            <form action="" method="post">
+            <form action="?action=signIn" method="post">
                 <div class="form-floating mb-4">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com">
                     <label for="floatingEmail">Adresse mail</label>
                 </div>
                 <div class="form-floating mb-4">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                     <label for="floatingPassword">Mot de passe</label>
                 </div>
 
                 <button type="submit" class="btn btn-outline-primary">Se connecter</button>
             </form>
+
+            <?php
+            if(isset($error))
+            { 
+                ?>
+                    <p>Il y a une erreur</p>
+
+                <?php 
+            }
+
+            ?>
 
         </div>
         

@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 
 <!-- header -->
 <div class="navbar">
@@ -67,8 +66,3 @@
 
 <!-- fin page mon compte -->
 
-
-<?php
-$content = ob_get_clean();
-
-require "view/template-home.php";
