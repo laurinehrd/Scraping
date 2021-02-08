@@ -17,40 +17,28 @@ class UserModel
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
+            die();
         }
     }
 
 
-    public function signIn($email, $password)
+    public function signIn($email)
     {
-        // $sql = 'SELECT name, firstname, email FROM user WHERE email = :email, password = :password';
-        // $sth = $this->db->prepare($sql);
-        // $sth->bindParam(':email', $email, PDO::PARAM_STR);
-        // $sth->bindParam(':password', $password, PDO::PARAM_STR);
-        // $sth->execute();
-        // return $sth->fetchAll(PDO::FETCH_ASSOC);
-
-        $request = $this->db->prepare("SELECT email, password FROM user WHERE email = '.$email.' AND password = '.$password.'");
-        // $request->bindParam(1, $email);
-        // $request->bindParam(2, $password);
+        
+        $request = $this->db->prepare("SELECT email, password FROM user WHERE email = ? ");
+        $request->bindParam(1, $email);
         
         $result = $request->execute();
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
         return $result;
-        var_dump($result);
-        
+        // $request->closeCursor();
         
     }
 
+
     public function signOn($name, $firstname, $email, $password)
     {
-        // $sql = 'INSERT INTO user (name, firstname, email, password) VALUE name = :name, firstname = :firstname, email = :email, password = :password';
-        // $sth = $this->db->prepare($sql);
-        // $sth->bindParam(':name', $name, PDO::PARAM_STR);
-        // $sth->bindParam(':firstname', $firstname, PDO::PARAM_STR);
-        // $sth->bindParam(':email', $email, PDO::PARAM_STR);
-        // $sth->bindParam(':password', $password, PDO::PARAM_STR);
-        // $sth->execute();
-        // return $sth->fetchAll(PDO::FETCH_ASSOC);
+        $password = password_hash($password, PASSWORD_DEFAULT); // hasher le mot de passe en bdd
 
         $request = $this->db->prepare('INSERT INTO user SET name = ?, firstname = ?, email = ?, password = ?');
         $request->bindParam(1, $name);
@@ -58,6 +46,19 @@ class UserModel
         $request->bindParam(3, $email);
         $request->bindParam(4, $password);
         $request->execute();
+
+    }
+
+
+    public function emailExist($email)
+    {
+        $request = $this->db->prepare("SELECT email FROM user WHERE email = ? ");
+        $request->bindParam(1, $email);
+
+        $result = $request->execute();
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
     }
 
 
