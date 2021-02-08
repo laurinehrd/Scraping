@@ -24,15 +24,22 @@ class SignOnController
 
             if(count($check) === 0) // compte le nb de fois ou l'email apparait
             {
-
-                if($_POST['createpassword'] == $_POST['passwordConfirm']) // si le password confirm est bien écrit
+                if(filter_var($_POST['createemail'], FILTER_VALIDATE_EMAIL)) // si l'adresse mail est valide
                 {
-                    $result = $user->signOn($_POST['createname'], $_POST['createfirstname'], $_POST['createemail'], $_POST['createpassword']);
-                    header('Location: ?action=dashboard');
+
+                    if($_POST['createpassword'] == $_POST['passwordConfirm']) // si le password confirm est bien écrit
+                    {
+                        $result = $user->signOn($_POST['createname'], $_POST['createfirstname'], $_POST['createemail'], $_POST['createpassword']);
+                        header('Location: ?action=dashboard');
+                    }
+                    else {
+                        echo 'Veuillez confirmer le bon mot de passe.';
+                    }
+
+                } else {
+                    echo "Votre email est considéré comme invalide.";
                 }
-                else {
-                    echo 'veuillez confirmer le bon mot de passe';
-                }
+                    
  
             }
             else {
