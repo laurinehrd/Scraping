@@ -29,7 +29,7 @@ class UserModel
         $request->bindParam(1, $email);
         
         $result = $request->execute();
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $result = $request->fetch(PDO::FETCH_ASSOC);
         return $result;
         // $request->closeCursor();
         

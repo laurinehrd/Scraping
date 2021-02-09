@@ -9,31 +9,31 @@ class SignInController
 {
     public function signIn()
     {
-        if(isset($_POST['email']) && isset($_POST['password']))
-        {
+
+        if(isset($_POST['email']) && !empty($_POST['email'])
+        && isset($_POST['password']) && !empty($_POST['password'])
+        ){
             
             $user = new UserModel();
 
-            $check = $user->emailExist($_POST['email']); // récupérer tous les emails pour voir si l'email exist
+            $check = $user->emailExist($_POST['email']); // récupérer tous les emails pour voir si l'email existe
 
-            
             if(count($check) === 0) // compte le nb de fois ou l'email apparait
             {
                 $error = true; // l'email n'existe pas en bdd
-                echo 'veuillez vous inscrire';
+                echo 'Aucun compte retrouvé, veuillez vous inscrire.';
             }
             else { // l'email existe en bdd
 
                 $result = $user->signIn($_POST['email']);
-                var_dump($result['password']);
 
-                if(password_verify($_POST['password'], $result['password']))
+                if(password_verify($_POST['password'], $result['password'])) // si l'email correspond
                 {
                     header('Location: ?action=dashboard');
                     // exit();
                 } 
                 else {
-                    echo 'mauvais mot de passe';
+                    echo 'Mauvais mot de passe.';
                 }
             }
 
