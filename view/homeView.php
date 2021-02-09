@@ -15,7 +15,6 @@
 
             <a href="?action=signIn" class="btn btn-primary">Se connecter</a>
             <a href="?action=signOn" class="btn btn-outline-primary">S'inscrire</a>
-            <a href="?action=dashboard" class="btn btn-outline-primary">dashboard</a>
 
         </div>
         
