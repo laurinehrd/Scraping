@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 
 require_once 'view/view.php';
 require_once 'model/userModel.php';
@@ -33,19 +33,20 @@ class SignOnController
                         header('Location: ?action=dashboard');
                     }
                     else {
-                        echo 'Veuillez confirmer le bon mot de passe.';
+                        // header('Location: ?action=signOn');
+                        $_SESSION['error'] = 'Veuillez confirmer le bon mot de passe.';
                     }
 
                 } else {
-                    echo "Votre email est considéré comme invalide.";
+                    // header('Location: ?action=signOn');
+                    $_SESSION['error'] = "Votre email est considéré comme invalide.";
                 }
                     
  
             }
             else {
-                $error = true;
-                // header('Location: ?action=home');
-                echo 'Votre email est déjà présent dans la base de données, veuillez vous connecter.';
+                header('Location: ?action=signOn');
+                $_SESSION['error'] = 'Votre email est déjà présent dans la base de données, veuillez vous connecter.';
                 exit();
             }
 

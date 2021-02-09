@@ -13,6 +13,16 @@
         <div class="accessAccount">
             <h2>Se connecter</h2>
 
+            <?php
+                if(!empty($_SESSION['error'])){
+                    echo '  <div class="alert alert-danger w-75 mx-auto" role="alert">
+                                ' . $_SESSION['error'] . '
+                            </div>
+                    ';
+                    $_SESSION['error'] = '';
+                }
+            ?>
+
             <form action="?action=signIn" method="post">
                 <div class="form-floating mb-4">
                     <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com">
@@ -26,16 +36,6 @@
                 <button type="submit" class="btn btn-outline-primary">Se connecter</button>
             </form>
 
-            <?php
-            if(isset($error))
-            { 
-                ?>
-                    <p>Il y a une erreur</p>
-
-                <?php 
-            }
-
-            ?>
 
         </div>
         

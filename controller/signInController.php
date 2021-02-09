@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once 'view/view.php';
 require_once 'model/userModel.php';
@@ -20,8 +19,8 @@ class SignInController
 
             if(count($check) === 0) // compte le nb de fois ou l'email apparait
             {
-                $error = true; // l'email n'existe pas en bdd
-                echo 'Aucun compte retrouvé, veuillez vous inscrire.';
+                // l'email n'existe pas en bdd
+                $_SESSION['error'] = 'Aucun compte retrouvé, veuillez vous inscrire.';
             }
             else { // l'email existe en bdd
 
@@ -29,11 +28,12 @@ class SignInController
 
                 if(password_verify($_POST['password'], $result['password'])) // si l'email correspond
                 {
+                    $_SESSION['user'] = $result;
                     header('Location: ?action=dashboard');
                     // exit();
                 } 
                 else {
-                    echo 'Mauvais mot de passe.';
+                    $_SESSION['error'] = 'Mauvais mot de passe.';
                 }
             }
 

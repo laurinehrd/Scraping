@@ -13,6 +13,16 @@
         <div class="accessAccount">
             <h2>Créer un compte</h2>
 
+            <?php
+                if(!empty($_SESSION['error'])){
+                    echo '  <div class="alert alert-danger w-75 mx-auto" role="alert">
+                                ' . $_SESSION['error'] . '
+                            </div>
+                    ';
+                    $_SESSION['error'] = '';
+                }
+            ?>
+
             <form action="?action=signOn" method="post">
 
                 <div class="row g-2">
@@ -45,18 +55,6 @@
 
                 <button type="submit" class="btn btn-outline-primary">S'inscrire</button>
             </form>
-
-            <?php
-
-            // if($errorMdp = true)
-            // {
-            //     ?>
-                    <!-- <p>il y a une erreur</p> -->
-
-                <?php 
-            // }
-
-            ?>
 
         </div>
         

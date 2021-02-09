@@ -22,6 +22,7 @@
         <div class="icon">
             <a href="?action=account">
                 <img src="assets/images/user.png" alt="icon user">
+                <p class="text-center">name</p>
             </a>
         </div>
     </div>
