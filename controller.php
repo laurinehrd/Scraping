@@ -1,8 +1,5 @@
 <?php
 
-require 'model.php';
-
-
 function home()
 {
     require "view/homeView.php";
