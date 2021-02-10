@@ -10,10 +10,49 @@
 
   <title>Scrap</title>
 
-
 </head>
 
 <body>
+
+<?php 
+if(!empty($_SESSION['user']))
+{
+?>
+
+<!-- header -->
+<div class="navbar">
+    <div class="icon-home">
+        <a href="?action=dashboard">
+            <img src="assets/images/home.png" alt="icon home">
+        </a>
+    </div>
+    <div class="logo">
+        <a href="">
+            <img src="assets/images/logoScrap.png" alt="logo Scrap">
+            <h1>Scrap</h1>
+        </a>
+    </div>
+    <div class="account">
+        <div class="text">
+            <a href="?action=account">Mon compte</a>
+            <a href="?action=disconnect">Se déconnecter</a>
+        </div>
+        <div class="icon">
+            <a href="?action=account">
+                <img src="assets/images/user.png" alt="icon user">
+                <p class="text-center">
+                    <?php echo $_SESSION['user']['firstname']; ?>
+                </p>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- fin header -->
+
+<?php 
+} 
+?>
+
 
 <?= $content ?>
 
