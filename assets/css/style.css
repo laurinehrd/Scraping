@@ -216,5 +216,7 @@ a {
     margin-top: 4rem;
     display: flex;
     justify-content: space-between; }
+    .form-account .button-update-delete #validate {
+      display: none; }
 
 /*# sourceMappingURL=style.css.map */

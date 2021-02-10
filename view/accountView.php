@@ -16,14 +16,14 @@
 
         <div class="row g-2 mb-4">
             <div class="col-md">
-                <input type="name" class="form-control" id="floatingFirstname" placeholder="<?php echo $_SESSION['user']['firstname']; ?>" disabled>
+                <input type="name" class="form-control" id="floatingFirstname" name="updateFirstname" value="<?php echo $_SESSION['user']['firstname']; ?>" disabled>
             </div>
             <div class="col-md">
-                <input type="name" class="form-control" id="floatingName" placeholder="<?php echo $_SESSION['user']['name']; ?>" disabled>
+                <input type="name" class="form-control" id="floatingName" name="updateName" value="<?php echo $_SESSION['user']['name']; ?>" disabled>
             </div>
         </div>
         <div class="mb-4">
-            <input type="email" class="form-control" id="floatingEmail" placeholder="<?php echo $_SESSION['user']['email']; ?>" disabled>
+            <input type="email" class="form-control" id="floatingEmail" name="updateEmail" value="<?php echo $_SESSION['user']['email']; ?>" disabled>
         </div>
         <div class="input-group mb-4">
             <input type="password" class="form-control" placeholder="mot de passe caché" aria-label="password" aria-describedby="button-addon2" disabled>
@@ -31,8 +31,10 @@
         </div>
 
         <div class="button-update-delete"> 
-            <button type="submit" class="btn btn-primary">Modifier les informations</button>
-            <button type="submit" class="btn btn-danger">Supprimer le compte</button>
+            <button type="button" class="btn btn-primary" id="updateAccount">Modifier les informations</button>
+            <button type="submit" class="btn btn-success" id="validate">Valider les modifications</button>
+
+            <button type="submit" class="btn btn-danger" id="deleteAccount">Supprimer le compte</button>
         </div>
         
         <?php 
