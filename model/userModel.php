@@ -61,5 +61,15 @@ class UserModel
 
     }
 
+    public function user($email)
+    {
+        $request = $this->db->prepare("SELECT name, firstname, email FROM user WHERE email = ? ");
+        $request->bindParam(1, $email);
+
+        $result = $request->execute();
+        $result = $request->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
 
 }
