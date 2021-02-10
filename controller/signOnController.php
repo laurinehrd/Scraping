@@ -1,8 +1,8 @@
 <?php
-session_start();
 
 require_once 'view/view.php';
 require_once 'model/userModel.php';
+require_once 'controller/checkController.php';
 
 
 class SignOnController
@@ -16,29 +16,38 @@ class SignOnController
         && isset($_POST['passwordConfirm']) && !empty($_POST['passwordConfirm'])
         ){
     
-            $errorMdp = false;
+            $check = new CheckController();
+            $createname = $check->check($_POST['createname']);
+            $createfirstname = $check->check($_POST['createfirstname']);
+            $createemail = $check->check($_POST['createemail']);
+            $createpassword = $check->check($_POST['createpassword']);
+            $passwordConfirm = $check->check($_POST['passwordConfirm']);
+            
 
             $user = new UserModel();
 
-            $check = $user->emailExist($_POST['createemail']); // récupérer tous les emails pour voir si l'email existe
+            $checkEmail = $user->emailExist($createemail); // récupérer tous les emails pour voir si l'email existe
 
-            if(count($check) === 0) // compte le nb de fois ou l'email apparait
+            if(count($checkEmail) === 0) // compte le nb de fois ou l'email apparait
             {
-                if(filter_var($_POST['createemail'], FILTER_VALIDATE_EMAIL)) // si l'adresse mail est valide
+                if(filter_var($createemail, FILTER_VALIDATE_EMAIL)) // si l'adresse mail est valide
                 {
 
-                    if($_POST['createpassword'] == $_POST['passwordConfirm']) // si le password confirm est bien écrit
+                    if($createpassword == $passwordConfirm) // si le password confirm est bien écrit
                     {
-                        $result = $user->signOn($_POST['createname'], $_POST['createfirstname'], $_POST['createemail'], $_POST['createpassword']); // ajout en bdd
+
+                        $result = $user->signOn($createname, $createfirstname, $createemail, $createpassword); // ajout en bdd
+
+                        $sessionUser = $user->user($createemail);
+                        $_SESSION['user'] = $sessionUser;
+
                         header('Location: ?action=dashboard');
                     }
                     else {
-                        // header('Location: ?action=signOn');
                         $_SESSION['error'] = 'Veuillez confirmer le bon mot de passe.';
                     }
 
                 } else {
-                    // header('Location: ?action=signOn');
                     $_SESSION['error'] = "Votre email est considéré comme invalide.";
                 }
                     

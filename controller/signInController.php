@@ -1,7 +1,9 @@
 <?php
+session_start();
 
 require_once 'view/view.php';
 require_once 'model/userModel.php';
+require_once 'controller/checkController.php';
 
 
 class SignInController
@@ -12,10 +14,15 @@ class SignInController
         if(isset($_POST['email']) && !empty($_POST['email'])
         && isset($_POST['password']) && !empty($_POST['password'])
         ){
-            
+
+            $check = new CheckController();
+            $email = $check->check($_POST['email']);
+            $password = $check->check($_POST['password']);
+
+
             $user = new UserModel();
 
-            $check = $user->emailExist($_POST['email']); // récupérer tous les emails pour voir si l'email existe
+            $check = $user->emailExist($email); // récupérer tous les emails pour voir si l'email existe
 
             if(count($check) === 0) // compte le nb de fois ou l'email apparait
             {
@@ -24,13 +31,14 @@ class SignInController
             }
             else { // l'email existe en bdd
 
-                $result = $user->signIn($_POST['email']);
+                $result = $user->signIn($email);
 
-                if(password_verify($_POST['password'], $result['password'])) // si l'email correspond
+                if(password_verify($password, $result['password'])) // si le mot de passe correspond
                 {
-                    $_SESSION['user'] = $result;
+                    $sessionUser = $user->user($email);
+                    $_SESSION['user'] = $sessionUser;
+
                     header('Location: ?action=dashboard');
-                    // exit();
                 } 
                 else {
                     $_SESSION['error'] = 'Mauvais mot de passe.';
