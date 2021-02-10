@@ -27,10 +27,8 @@ if(!empty($_SESSION['user']))
         </a>
     </div>
     <div class="logo">
-        <a href="">
-            <img src="assets/images/logoScrap.png" alt="logo Scrap">
-            <h1>Scrap</h1>
-        </a>
+        <img src="assets/images/logoScrap.png" alt="logo Scrap">
+        <h1>Scrap</h1>
     </div>
     <div class="account">
         <div class="text">
