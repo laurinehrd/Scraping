@@ -1,34 +1,6 @@
 
 <!-- page dashboard -->
 
-<!-- header -->
-<div class="navbar">
-    <div class="icon-home">
-        <a href="?action=dashboard">
-            <img src="assets/images/home.png" alt="icon home">
-        </a>
-    </div>
-    <div class="logo">
-        <a href="?action=home">
-            <img src="assets/images/logoScrap.png" alt="logo Scrap">
-            <h1>Scrap</h1>
-        </a>
-    </div>
-    <div class="account">
-        <div class="text">
-            <a href="?action=account">Mon compte</a>
-            <a href="">Se déconnecter</a>
-        </div>
-        <div class="icon">
-            <a href="?action=account">
-                <img src="assets/images/user.png" alt="icon user">
-                <p class="text-center">name</p>
-            </a>
-        </div>
-    </div>
-</div>
-<!-- fin header -->
-
 <h2 class="h2-dashboard">Que voulez-vous faire ?</h2>
 
 <div class="menu">
