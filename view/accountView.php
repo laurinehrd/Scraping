@@ -7,7 +7,7 @@
         <img src="assets/images/user-big.png" alt="icon user">
     </div>
 
-    <form action="" method="post">
+    <form action="?action=account" method="post">
 
         <?php 
             if(!empty($_SESSION['user']))
@@ -34,11 +34,56 @@
             <button type="button" class="btn btn-primary" id="updateAccount">Modifier les informations</button>
             <button type="submit" class="btn btn-success" id="validate">Valider les modifications</button>
 
-            <button type="submit" class="btn btn-danger" id="deleteAccount">Supprimer le compte</button>
+            <!-- <button type="submit" class="btn btn-danger" id="deleteAccount" name="deleteAccount">Supprimer le compte</button> -->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" id="deleteAccount" name="deleteAccount" data-bs-toggle="modal" data-bs-target="#deleteAccountBtn">
+            Supprimer le compte
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="deleteAccountBtn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Suppression du compte</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Êtes-vous sûr de vouloir supprimer le compte ? <br>
+                        Aucun retour en arrière ne sera possible.
+
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" name="confirmDelete" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Oui
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-primary">Confirmer</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Modal -->
+
         </div>
         
         <?php 
             } 
+        ?>
+
+        <?php
+            if(!empty($_SESSION['account'])){
+                echo '  <div class="alert alert-success w-75 mx-auto mt-5" role="alert">
+                            ' . $_SESSION['account'] . '
+                        </div>
+                ';
+                $_SESSION['account'] = '';
+            }
         ?>
 
     </form>
