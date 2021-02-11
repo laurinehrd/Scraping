@@ -61,6 +61,7 @@ class UserModel
 
     }
 
+
     public function user($email)
     {
         $request = $this->db->prepare("SELECT name, firstname, email FROM user WHERE email = ? ");
@@ -69,6 +70,25 @@ class UserModel
         $result = $request->execute();
         $result = $request->fetch(PDO::FETCH_ASSOC);
         return $result;
+    }
+
+
+    public function updateAccount($newfirstname, $newname, $newemail, $email)
+    {
+        $request = $this->db->prepare("UPDATE `user` SET `name`= ?, `firstname` = ?, `email` = ? WHERE `email`= ?");
+        $request->bindParam(1, $newname);
+        $request->bindParam(2, $newfirstname);
+        $request->bindParam(3, $newemail);
+        $request->bindParam(4, $email);
+        $request->execute();
+    }
+
+
+    public function deleteAccount($email)
+    {
+        $request = $this->db->prepare("DELETE FROM `user` WHERE email = ?");
+        $request->bindParam(1, $email);
+        $request->execute();
     }
 
 
