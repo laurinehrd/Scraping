@@ -2,7 +2,7 @@
 <!-- page home -->
 <div class="section-home">
 
-    <div class="content col-md-6">
+    <div class="content col-lg-6">
 
         <div class="logo mx-auto">
             <a href="?action=home">
@@ -20,7 +20,7 @@
         
     </div>
 
-<div class="image col-md-6"></div>
+<div class="image col-lg-6"></div>
 
 </div>
 <!-- fin page home -->

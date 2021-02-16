@@ -1,0 +1,90 @@
+
+@media all and (max-width: 768px){
+
+    // HOME
+    .section-home {
+        display: flex;
+        flex-direction: column-reverse;
+        .content {
+            .logo {
+                position: absolute;
+                top: 40px;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                a {
+                    background-color: white;
+                    border-radius: 7px;
+                    padding: 1rem;
+                }
+            }
+            .accessAccount {
+                h2 {
+                    margin-top: 2rem;
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        a {
+            margin: 2rem;
+        }
+    }
+
+    // NAVBAR
+    .navbar {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        
+        .logo{
+            display: flex;
+            flex-direction: column;
+            img {
+            }
+            h1 {
+                padding-left: 0;
+            }
+        }
+        .account {
+            display: flex;
+            flex-direction: column-reverse;
+            .text {
+                a:first-child {
+                    display: none;
+                }
+            }
+            .icon img{
+                width: 3em;
+            }
+        }
+    }
+
+    //DASHBOARD
+    .h2-dashboard {
+        margin-top: 2rem;
+        padding: 2rem;
+    }
+    .menu {
+        margin-top: 2rem;
+    }
+
+    // FORM 
+    .form-scrap {
+        width: 80%;
+    }
+    .form-account {
+        width: 80%;
+    }
+    .form-account {
+        .button-update-delete {
+            display: flex;
+            flex-direction: column;
+            button:first-child {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
