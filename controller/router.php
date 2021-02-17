@@ -38,54 +38,69 @@ class Router
 
     public function routerRequest()
     {
-        if(isset($_GET['action']) && !empty($_SESSION['user'])){ // si qqch dans url et qqch dans session 
+        if(isset($_GET['action']) && !empty($_SESSION['user'])) // si qqch dans url et qqch dans session 
+        { 
             
-            if($_GET['action']=='dashboard'){
+            if($_GET['action']=='dashboard')
+            {
                 $this->dashboardController->dashboard();
             }
-            if($_GET['action']=='account'){
+            if($_GET['action']=='account')
+            {
                 $this->accountController->account();
             }
-            if($_GET['action']=='newScrap'){
+            if($_GET['action']=='newScrap')
+            {
                 $this->newScrapController->newScrap();
             }
-            if($_GET['action']=='listScrap'){
+            if($_GET['action']=='listScrap')
+            {
                 $this->listScrapController->listScrap();
             }
-            if($_GET['action']=='historical'){
+            if($_GET['action']=='historical')
+            {
                 $this->historicalController->historical();
             }
-            if($_GET['action']=='disconnect'){
+            if($_GET['action']=='disconnect')
+            {
                 $this->disconnectController->disconnect();
             }
         }
         else if(isset($_GET['action'])) // et si y'a qqch dans url et rien dans session
         {
             
-            if($_GET['action']=='signIn'){
+            if($_GET['action']=='signIn')
+            {
                 $this->signInController->signIn();
             }
-            if($_GET['action']=='signOn'){
+            if($_GET['action']=='signOn')
+            {
                 $this->signOnController->signOn();
             }
-            if($_GET['action']=='home'){
+            if($_GET['action']=='home')
+            {
                 $this->homeController->home();
             }
 
             // ramène à la page home si on essaye de rentrer le nom de la page dans l'url en étant pas connecté
-            if($_GET['action']=='dashboard'){
+            if($_GET['action']=='dashboard')
+            {
                 $this->homeController->home();
             }
-            if($_GET['action']=='account'){
+            if($_GET['action']=='account')
+            {
                 $this->homeController->home();
             }
-            if($_GET['action']=='newScrap'){
+            if($_GET['action']=='newScrap')
+            {
                 $this->homeController->home();
             }
-            if($_GET['action']=='listScrap'){
+            if($_GET['action']=='listScrap')
+            {
                 $this->homeController->home();
             }
-            if($_GET['action']=='historical'){
+            if($_GET['action']=='historical')
+            {
                 $this->homeController->home();
             }
 
