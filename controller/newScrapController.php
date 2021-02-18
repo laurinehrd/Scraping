@@ -31,14 +31,14 @@ class NewScrapController
             $scrapCategory = $check->check($_POST['scrapCategory']);
             
             $scrap = new ScrapModel();
-            $scrap->scrap($scrapName, $scrapCategory, $scrapUrl, $selectParent, $underSelect); 
+            $scrap->scrap($scrapName, $scrapCategory, $scrapUrl, $selectParent, $underSelect); // élément du scrap entrée en bdd
 
             $this->lastId = $scrap->lastId(); // récupérer le dernier id de scrap
 
             
+            // extraction de données
             $client = new Client();
             $scraping = $client->request('GET', $scrapUrl);
-
 
             $scraping->filter($selectParent.'>'.$underSelect)->each(function ($node)  { // use ($out)
 
@@ -46,18 +46,18 @@ class NewScrapController
                 print_r([$nom]);
 
                 $scrap = new ScrapModel();
-                $scrap->detailScrap($_POST['selectChild'], $this->lastId, $_POST['scrapType'], $nom);
+                $scrap->detailScrap($_POST['selectChild'], $this->lastId, $_POST['scrapType'], $nom); // sous-sélecteur entré en bdd à l'aide de l'id pour correspondre à la table scrap
             });
 
 
         }
         
-
+        // sélection des types de données
         $scrap = new ScrapModel();
         $types = $scrap->typeAll();
 
 
         $view = new View('newScrap');
-        $view->generate(array('types'=>$types));
+        $view->generate(array('types'=>$types)); // on passe les types de données pour y afficher dans la vue
     }
 }

@@ -33,7 +33,7 @@
             <label for="inputType" class="form-label">Type</label>
             <select id="inputType" class="form-select" name="scrapType">
                 <option value="-1" selected>Choisir...</option>
-                <?php 
+                <?php // on génère l'affichage des types de données
                 foreach($data['types'] as $type)
                 {
 
