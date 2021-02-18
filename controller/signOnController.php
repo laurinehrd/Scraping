@@ -36,7 +36,7 @@ class SignOnController
                     if($createpassword == $passwordConfirm) // si le password confirm est bien écrit
                     {
 
-                        $result = $user->signOn($createname, $createfirstname, $createemail, $createpassword); // ajout en bdd
+                        $user->signOn($createname, $createfirstname, $createemail, $createpassword); // ajout en bdd
 
                         $sessionUser = $user->user($createemail);
                         $_SESSION['user'] = $sessionUser;
