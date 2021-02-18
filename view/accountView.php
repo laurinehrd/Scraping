@@ -45,26 +45,26 @@
             <div class="modal fade" id="deleteAccountBtn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Suppression du compte</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Êtes-vous sûr de vouloir supprimer le compte ? <br>
-                        Aucun retour en arrière ne sera possible.
-
-                        <div class="form-check mt-3">
-                            <input class="form-check-input" type="checkbox" name="confirmDelete" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Oui
-                            </label>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Suppression du compte</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <div class="modal-body">
+                            Êtes-vous sûr de vouloir supprimer le compte ? <br>
+                            Aucun retour en arrière ne sera possible.
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-primary">Confirmer</button>
-                    </div>
+                            <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" name="confirmDelete" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Oui
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="submit" class="btn btn-primary">Confirmer</button>
+                        </div>
                     </div>
                 </div>
             </div>
