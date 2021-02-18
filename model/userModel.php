@@ -30,9 +30,7 @@ class UserModel
         
         $result = $request->execute();
         $result = $request->fetch(PDO::FETCH_ASSOC);
-        return $result;
-        // $request->closeCursor();
-        
+        return $result;        
     }
 
 
@@ -46,7 +44,6 @@ class UserModel
         $request->bindParam(3, $email);
         $request->bindParam(4, $password);
         $request->execute();
-
     }
 
 
@@ -58,7 +55,6 @@ class UserModel
         $result = $request->execute();
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
         return $result;
-
     }
 
 
